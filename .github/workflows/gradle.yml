@@ -21,11 +21,16 @@ jobs:
     steps:
     - name: Checkout The Repository
       uses: actions/checkout@v4
+      
     - name: Set up JDK ${{ matrix.java }}
       uses: actions/setup-java@v4
       with:
         java-version: ${{ matrix.java }}
         distribution: 'temurin'
+
+    - name: Set Executable flag for Linux Permissions of Gradle Wrapper
+      if: ${{ runner.os != 'Windows' }}
+      run: chmod +x ./gradlew
 
     # Configure Gradle for optimal use in GitHub Actions, including caching of downloaded dependencies.
     # See: https://github.com/gradle/actions/blob/main/setup-gradle/README.md
