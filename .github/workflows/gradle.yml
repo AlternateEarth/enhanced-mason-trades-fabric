@@ -16,7 +16,7 @@ jobs:
         java: [17, 21]
     runs-on: ubuntu-latest
     permissions:
-      contents: read
+      contents: write
     steps:
     - name: Checkout The Repository
       uses: actions/checkout@v4
