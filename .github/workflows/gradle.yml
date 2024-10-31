@@ -11,63 +11,34 @@ jobs:
     strategy:
       matrix:
         # Use these Java versions
-        java: [17] # Current Java LTS & minimum supported by Minecraft
-        # Use these OS-build agents
-        os: [ubuntu-latest, windows-latest]
-    runs-on: ${{ matrix.os }}
+        # 17 is the version supported by Minecraft 1.20.1
+        # 21 is the newest version
+        java: [17, 21]
+    runs-on: ubuntu-latest
     permissions:
       contents: read
-
     steps:
     - name: Checkout The Repository
-      uses: actions/checkout@v4
+      uses: actions/checkout@v4.2.2
+
+    - name: Validate Gradle Wrapper
+      uses: gradle/wrapper-validation-action@v3.5.0
       
     - name: Set up JDK ${{ matrix.java }}
-      uses: actions/setup-java@v4
+      uses: actions/setup-java@v4.5.0
       with:
         java-version: ${{ matrix.java }}
         distribution: 'temurin'
 
     - name: Set Executable flag for Linux Permissions of Gradle Wrapper
-      if: ${{ runner.os != 'Windows' }}
       run: chmod +x ./gradlew
-
-    # Configure Gradle for optimal use in GitHub Actions, including caching of downloaded dependencies.
-    # See: https://github.com/gradle/actions/blob/main/setup-gradle/README.md
-    - name: Setup Gradle
-      uses: gradle/actions/setup-gradle@af1da67850ed9a4cedd57bfd976089dd991e2582 # v4.0.0
 
     - name: Build with Gradle Wrapper
       run: ./gradlew build
 
     - name: Capture Linux Java 17 Build Artifacts
-      if: ${{ runner.os == 'Linux' && matrix.java == '17' }}
-      uses: actions/upload-artifact@v4
+      if: ${{ matrix.java == '17' }}
+      uses: actions/upload-artifact@v4.4.3
       with:
         name: enhanced-mason-trades-fabric-1.20.1
         path: build/libs/
-        
-  dependency-submission:
-    strategy:
-      matrix:
-        # Use these Java versions
-        java: [17] # Current Java LTS & minimum supported by Minecraft
-        # Use these OS-build agents
-        os: [ubuntu-latest, windows-latest]
-    runs-on: ${{ matrix.os }}
-    permissions:
-      contents: write
-
-    steps:
-    - name: Checkout The Repository
-      uses: actions/checkout@v4
-    - name: Set up JDK ${{ matrix.java }}
-      uses: actions/setup-java@v4
-      with:
-        java-version: ${{ matrix.java }}
-        distribution: 'temurin'
-
-    # Generates and submits a dependency graph, enabling Dependabot Alerts for all project dependencies.
-    # See: https://github.com/gradle/actions/blob/main/dependency-submission/README.md
-    - name: Generate and submit dependency graph
-      uses: gradle/actions/dependency-submission@af1da67850ed9a4cedd57bfd976089dd991e2582 # v4.0.0
