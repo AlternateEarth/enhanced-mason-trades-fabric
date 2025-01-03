@@ -1,5 +1,14 @@
 # Enhanced Mason Trades for Fabric
 
+## Added Blocks
+
+| Source  | Item Name  | Item Code            | Villager | Level | Trade Type | Added |
+| ------- | ---------- | -------------------- | -------- | ----- | ---------- | ----- |
+| Vanilla | Bricks     | minecraft:bricks     | Mason    | 2     | Sell       | ✔️    |
+| Vanilla | Mud Bricks | minecraft:mud_bricks | Mason    | 2     | Sell       | ✔️    |
+| Vanilla | Tuff       | minecraft:tuff       | Mason    | 3     | Sell       | ✔️    |
+| Vanilla | Calcite    | minecraft:calcite    | Mason    | 4     | Sell       | ✔️    |
+
 ## Update Process
 
 - Update whatever you are trying to update

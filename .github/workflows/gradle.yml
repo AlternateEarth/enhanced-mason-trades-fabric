@@ -9,9 +9,9 @@ on:
 env:
   MINECRAFT_VERSION: 1.20.1
   JAVA_VERSION: 17
-  VERSION: mc1.20.1-0.1.1-beta-1-fabric
-  VERSION_TYPE: beta
-  RELEASE_NAME: 0.1.1 (Beta 1) for Fabric 1.20.1
+  VERSION: mc1.20.1-0.2.0-release-fabric
+  VERSION_TYPE: release
+  RELEASE_NAME: 0.2.0 (Release) for Fabric 1.20.1
   MODRINTH_TOKEN: ${{ secrets.PUBLISH_MODRINTH_TOKEN }}
   GITHUB_TOKEN: ${{ secrets.PUBLISH_GITHUB_TOKEN }}
 
