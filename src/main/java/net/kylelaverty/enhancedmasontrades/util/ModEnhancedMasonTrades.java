@@ -11,8 +11,8 @@ import net.minecraft.village.VillagerProfession;
 
 public class ModEnhancedMasonTrades {
     public static void registerCustomTrades(){
-        TradeOfferHelper.registerVillagerOffers(VillagerProfession.MASON, 2, factories -> factories.add(new EmeraldtoItemOffer(new ItemStack(Items.BRICKS, 4), 1, 16, 5, 0.2f)));
-        TradeOfferHelper.registerVillagerOffers(VillagerProfession.MASON, 2, factories -> factories.add(new EmeraldtoItemOffer(new ItemStack(Items.MUD_BRICKS, 4), 1, 16, 5, 0.2f)));
+        TradeOfferHelper.registerVillagerOffers(VillagerProfession.MASON, 2, factories -> factories.add(new EmeraldToItemOffer(new ItemStack(Items.BRICKS, 4), 1, 16, 5, 0.2f)));
+        TradeOfferHelper.registerVillagerOffers(VillagerProfession.MASON, 2, factories -> factories.add(new EmeraldToItemOffer(new ItemStack(Items.MUD_BRICKS, 4), 1, 16, 5, 0.2f)));
         TradeOfferHelper.registerVillagerOffers(VillagerProfession.MASON, 3, factories -> factories.add(new EmeraldToItemOffer(new ItemStack(Items.TUFF, 4), 1, 16, 10, 0.2f)));
         TradeOfferHelper.registerVillagerOffers(VillagerProfession.MASON, 4, factories -> factories.add(new EmeraldToItemOffer(new ItemStack(Items.CALCITE, 4), 1, 8, 15, 0.2f)));
     }
