@@ -23,13 +23,13 @@ public class ModEnhancedMasonTrades {
                 TradeLevel.JOURNEYMAN,
                 factories -> {
                     factories.add(new EmeraldToItemOffer(new ItemStack(Items.TUFF, 4), 1, 16, 10, 0.2f));
+                    factories.add(new EmeraldToItemOffer(new ItemStack(Items.TERRACOTTA, 1), 1, 16, 10, 0.2f));
                 });
         TradeOfferHelper.registerVillagerOffers(
                 VillagerProfession.MASON,
                 TradeLevel.EXPERT,
                 factories -> {
                     factories.add(new EmeraldToItemOffer(new ItemStack(Items.CALCITE, 4), 1, 8, 15, 0.2f));
-                    factories.add(new EmeraldToItemOffer(new ItemStack(Items.TERRACOTTA, 1), 1, 12, 15, 0.2f));
                 });
     }
 
