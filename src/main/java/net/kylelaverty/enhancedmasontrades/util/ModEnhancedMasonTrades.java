@@ -10,11 +10,35 @@ import net.minecraft.village.TradeOffers;
 import net.minecraft.village.VillagerProfession;
 
 public class ModEnhancedMasonTrades {
-    public static void registerCustomTrades(){
-        TradeOfferHelper.registerVillagerOffers(VillagerProfession.MASON, 2, factories -> factories.add(new EmeraldToItemOffer(new ItemStack(Items.BRICKS, 4), 1, 16, 5, 0.2f)));
-        TradeOfferHelper.registerVillagerOffers(VillagerProfession.MASON, 2, factories -> factories.add(new EmeraldToItemOffer(new ItemStack(Items.MUD_BRICKS, 4), 1, 16, 5, 0.2f)));
-        TradeOfferHelper.registerVillagerOffers(VillagerProfession.MASON, 3, factories -> factories.add(new EmeraldToItemOffer(new ItemStack(Items.TUFF, 4), 1, 16, 10, 0.2f)));
-        TradeOfferHelper.registerVillagerOffers(VillagerProfession.MASON, 4, factories -> factories.add(new EmeraldToItemOffer(new ItemStack(Items.CALCITE, 4), 1, 8, 15, 0.2f)));
+    public static void registerCustomTrades() {
+        TradeOfferHelper.registerVillagerOffers(
+                VillagerProfession.MASON,
+                TradeLevel.APPRENTICE,
+                factories -> {
+                    factories.add(new EmeraldToItemOffer(new ItemStack(Items.BRICKS, 4), 1, 16, 5, 0.2f));
+                    factories.add(new EmeraldToItemOffer(new ItemStack(Items.MUD_BRICKS, 4), 1, 16, 5, 0.2f));
+                });
+        TradeOfferHelper.registerVillagerOffers(
+                VillagerProfession.MASON,
+                TradeLevel.JOURNEYMAN,
+                factories -> {
+                    factories.add(new EmeraldToItemOffer(new ItemStack(Items.TUFF, 4), 1, 16, 10, 0.2f));
+                });
+        TradeOfferHelper.registerVillagerOffers(
+                VillagerProfession.MASON,
+                TradeLevel.EXPERT,
+                factories -> {
+                    factories.add(new EmeraldToItemOffer(new ItemStack(Items.CALCITE, 4), 1, 8, 15, 0.2f));
+                    factories.add(new EmeraldToItemOffer(new ItemStack(Items.TERRACOTTA, 1), 1, 12, 15, 0.2f));
+                });
+    }
+
+    private static final class TradeLevel {
+        public static final int NOVICE = 1;
+        public static final int APPRENTICE = 2;
+        public static final int JOURNEYMAN = 3;
+        public static final int EXPERT = 4;
+        public static final int MASTER = 5;
     }
 
     private static final class EmeraldToItemOffer implements TradeOffers.Factory {
@@ -26,9 +50,9 @@ public class ModEnhancedMasonTrades {
         private final float multiplier;
 
         /**
-         * @param stack The item and how many of them will be given to the player.
-         * @param price The number of emeralds this trade will cost.
-         * @param maxUses The number of uses of this trade before being exhausted.
+         * @param stack      The item and how many of them will be given to the player.
+         * @param price      The number of emeralds this trade will cost.
+         * @param maxUses    The number of uses of this trade before being exhausted.
          * @param experience The amount of experience given for this trade.
          * @param multiplier The price multiplier for repeated trades.
          */
@@ -41,7 +65,8 @@ public class ModEnhancedMasonTrades {
         }
 
         public TradeOffer create(Entity entity, Random random) {
-            return new TradeOffer(new ItemStack(Items.EMERALD, this.price), this.sell, this.maxUses, this.experience, this.multiplier);
+            return new TradeOffer(new ItemStack(Items.EMERALD, this.price), this.sell, this.maxUses, this.experience,
+                    this.multiplier);
         }
     }
 }
