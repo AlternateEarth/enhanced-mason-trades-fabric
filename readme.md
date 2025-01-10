@@ -7,8 +7,8 @@
 | Vanilla | Bricks     | minecraft:bricks     | Mason    | 2     | Sell       | ✔️    |
 | Vanilla | Mud Bricks | minecraft:mud_bricks | Mason    | 2     | Sell       | ✔️    |
 | Vanilla | Tuff       | minecraft:tuff       | Mason    | 3     | Sell       | ✔️    |
+| Vanilla | Terracotta | minecraft:terracota  | Mason    | 3     | Sell       | ✔️    |
 | Vanilla | Calcite    | minecraft:calcite    | Mason    | 4     | Sell       | ✔️    |
-| Vanilla | Terracotta | minecraft:terracota  | Mason    | 4     | Sell       | ✔️    |
 
 ## Update Process
 
