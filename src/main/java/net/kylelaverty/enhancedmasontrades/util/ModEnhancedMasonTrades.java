@@ -13,6 +13,12 @@ public class ModEnhancedMasonTrades {
     public static void registerCustomTrades() {
         TradeOfferHelper.registerVillagerOffers(
                 VillagerProfession.MASON,
+                TradeLevel.NOVICE,
+                factories -> {
+                    factories.add(new EmeraldToItemOffer(new ItemStack(Items.PACKED_MUD, 1), 1, 16, 2, 0.2f));
+                });
+        TradeOfferHelper.registerVillagerOffers(
+                VillagerProfession.MASON,
                 TradeLevel.APPRENTICE,
                 factories -> {
                     factories.add(new EmeraldToItemOffer(new ItemStack(Items.BRICKS, 4), 1, 16, 5, 0.2f));
@@ -27,9 +33,9 @@ public class ModEnhancedMasonTrades {
                 });
         TradeOfferHelper.registerVillagerOffers(
                 VillagerProfession.MASON,
-                TradeLevel.EXPERT,
+                TradeLevel.MASTER,
                 factories -> {
-                    factories.add(new EmeraldToItemOffer(new ItemStack(Items.CALCITE, 4), 1, 8, 15, 0.2f));
+                    factories.add(new EmeraldToItemOffer(new ItemStack(Items.CALCITE, 1), 1, 8, 20, 0.2f));
                 });
     }
 

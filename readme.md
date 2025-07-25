@@ -4,17 +4,18 @@
 
 | Source  | Item Name  | Item Code            | Villager | Level | Trade Type | Added |
 | ------- | ---------- | -------------------- | -------- | ----- | ---------- | ----- |
+| Vanilla | Packed Mud | minecraft:packed_mud | Mason    | 1     | Sell       | ✔️    |
 | Vanilla | Bricks     | minecraft:bricks     | Mason    | 2     | Sell       | ✔️    |
 | Vanilla | Mud Bricks | minecraft:mud_bricks | Mason    | 2     | Sell       | ✔️    |
 | Vanilla | Tuff       | minecraft:tuff       | Mason    | 3     | Sell       | ✔️    |
 | Vanilla | Terracotta | minecraft:terracota  | Mason    | 3     | Sell       | ✔️    |
-| Vanilla | Calcite    | minecraft:calcite    | Mason    | 4     | Sell       | ✔️    |
+| Vanilla | Calcite    | minecraft:calcite    | Mason    | 5     | Sell       | ✔️    |
 
 ## Update Process
 
 - Update whatever you are trying to update
 - Update any version numbers that need to be updated
-  - in `src/fabric.mod.json`
+  - in `src/main/resources/fabric.mod.json`
     - `version`
     - `depends\fabricloader`
     - `depends\minecraft`

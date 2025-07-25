@@ -1,34 +1,30 @@
 {
-	"schemaVersion": 1,
-	"id": "enhancedmasontrades",
-	"version": "${version}",
-	"name": "Enhanced Mason Trades",
-	"description": "Enhance mason trades with more blocks",
-	"authors": [
-		"kylelaverty"
-	],
-	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/kylelaverty/enhanced-mason-trades-fabric"
-	},
-	"license": "MIT",
-	"icon": "assets/enhancedmasontrades/icon.png",
-	"environment": "*",
-	"entrypoints": {
-		"main": [
-			"net.kylelaverty.enhancedmasontrades.EnhancedMasonTrades"
-		]
-	},
-	"depends": {
-		"fabricloader": ">=0.16.5",
-		"minecraft": "~1.20.1",
-		"java": ">=17",
-		"fabric-api": "*"
-	},
-	"custom": {
-		"mc-publish": {
-			"modrinth": "1JFDypE0",
-			"loaders": ["fabric"]
-		}
+  "schemaVersion": 1,
+  "id": "enhancedmasontrades",
+  "version": "${version}",
+  "name": "Enhanced Mason Trades",
+  "description": "Enhance mason trades with more blocks",
+  "authors": ["kylelaverty"],
+  "contact": {
+    "homepage": "https://fabricmc.net/",
+    "sources": "https://github.com/AlternateEarth/enhanced-mason-trades-fabric"
+  },
+  "license": "MIT",
+  "icon": "assets/enhancedmasontrades/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": ["net.kylelaverty.enhancedmasontrades.EnhancedMasonTrades"]
+  },
+  "depends": {
+    "fabricloader": ">=0.16.5",
+    "minecraft": "~1.20.1",
+    "java": ">=17",
+    "fabric-api": "*"
+  },
+  "custom": {
+    "mc-publish": {
+      "modrinth": "1JFDypE0",
+      "loaders": ["fabric"]
+    }
   }
 }
